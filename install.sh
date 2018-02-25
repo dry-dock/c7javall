@@ -1,0 +1,53 @@
+echo "================ Installing gradle ================="
+wget -nv https://services.gradle.org/distributions/gradle-4.2.1-all.zip
+unzip -qq gradle-4.2.1-all.zip -d /usr/local && rm -f gradle-4.2.1-all.zip
+ln -fs /usr/local/gradle-4.2.1/bin/gradle /usr/bin
+echo 'export PATH=$PATH:/usr/local/gradle-4.2.1/bin' >> /etc/drydock/.env
+
+echo "================ Installing apache-maven-3.5.2 ================="
+wget -nv http://redrockdigimark.com/apachemirror/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+tar xzf apache-maven-3.5.2-bin.tar.gz -C /usr/local && rm -f apache-maven-3.5.2-bin.tar.gz
+ln -fs /usr/local/apache-maven-3.5.2/bin/mvn /usr/bin
+echo 'export PATH=$PATH:/usr/local/apache-maven-3.5.2/bin' >> /etc/drydock/.env
+
+echo "================ Installing apache-ant-1.10.1 ================="
+wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
+tar xzf apache-ant-1.10.1-bin.tar.gz -C /usr/local && rm -f apache-ant-1.10.1-bin.tar.gz
+ln -fs /usr/local/apache-ant-1.10.1/bin/ant /usr/bin
+echo 'export ANT_HOME=/usr/local/apache-ant-1.10.1' >> /etc/drydock/.env
+echo 'export PATH=$PATH:/usr/local/apache-ant-1.10.1/bin' >> /etc/drydock/.env
+
+for file in /c7javall/version/*.sh;
+do
+  $file
+done
+
+echo "================ Install android sdk & plugin ================"
+pushd /tmp
+
+wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+unzip -q sdk-tools-linux-3859397.zip
+mkdir -p /opt/android-sdk
+mv tools/ /opt/android-sdk/
+
+ln -fs /opt/android-sdk/tools/bin/sdkmanager /usr/bin
+
+export JAVA_HOME=/usr/java/jdk1.8.0_161
+export PATH=$PATH=/usr/java/jre1.8.0_161/bin
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_SDK=/opt/android-sdk/tools/bin
+
+mkdir -p ~/.android
+touch /root/.android/repositories.cfg
+yes | sdkmanager --licenses
+
+echo 'export ANDROID_HOME=/opt/android-sdk' >> /etc/drydock/.env
+echo 'export ANDROID_SDK=/opt/android-sdk/tools/bin' >> /etc/drydock/.env
+
+echo 'export PATH=$PATH:/opt/android-sdk/tools/bin' >> /etc/drydock/.env
+
+wget http://central.maven.org/maven2/com/github/triplet/gradle/play-publisher/1.2.0/play-publisher-1.2.0.jar
+mkdir -p /opt/android-plugins
+mv play-publisher-1.2.0.jar /opt/android-plugins/
+
+popd
