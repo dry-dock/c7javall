@@ -2,8 +2,8 @@
 
 echo "============================ JDK versions ==============================="
 
-echo "alternatives --set java /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.161-2.6.12.0.el7_4.x86_64/jre/bin/java"
-alternatives --set java /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.161-2.6.12.0.el7_4.x86_64/jre/bin/java
+echo "alternatives --set java /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.171-2.6.13.0.el7_4.x86_64/jre/bin/java"
+alternatives --set java /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.171-2.6.13.0.el7_4.x86_64/jre/bin/java
 printf "\n"
 java -version
 printf "\n"
