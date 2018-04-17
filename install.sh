@@ -7,7 +7,8 @@ unzip -qq gradle-$GRADLE_VERSION-all.zip -d /usr/local && rm -f gradle-$GRADLE_V
 ln -fs /usr/local/gradle-$GRADLE_VERSION/bin/gradle /usr/bin
 echo 'export PATH=$PATH:/usr/local/gradle-$GRADLE_VERSION/bin' >> /etc/drydock/.env
 
-$APACHE_MAVEN_MAJOR_VERSION=3
+
+APACHE_MAVEN_MAJOR_VERSION=3
 APACHE_MAVEN_VERSION=3.5.3
 echo "Installing apache-maven version: $APACHE_MAVEN_VERSION"
 echo "================ Installing apache-maven-$APACHE_MAVEN_VERSION ================="
