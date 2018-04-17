@@ -21,7 +21,7 @@ echo 'export PATH=$PATH:/usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin' >> /e
 APACHE_ANT_VERSION=1.10.1
 echo "Installing apache-ant version: $APACHE_ANT_VERSION"
 echo "================ Installing apache-ant-$APACHE_ANT_VERSION ================="
-wget -nv https://archive.apache.org/dist/ant/binarie/apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
+wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
 tar xzf apache-ant-$APACHE_ANT_VERSION-bin.tar.gz -C /usr/local && rm -f apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
 ln -fs /usr/local/apache-ant-$APACHE_ANT_VERSION/bin/ant /usr/bin
 echo 'export ANT_HOME=/usr/local/apache-ant-$APACHE_ANT_VERSION' >> /etc/drydock/.env
