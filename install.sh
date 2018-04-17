@@ -1,21 +1,31 @@
+
+GRADLE_VERSION=4.6
+echo "Installing gradle version: $GRADLE_VERSION"
 echo "================ Installing gradle ================="
-wget -nv https://services.gradle.org/distributions/gradle-4.2.1-all.zip
-unzip -qq gradle-4.2.1-all.zip -d /usr/local && rm -f gradle-4.2.1-all.zip
-ln -fs /usr/local/gradle-4.2.1/bin/gradle /usr/bin
-echo 'export PATH=$PATH:/usr/local/gradle-4.2.1/bin' >> /etc/drydock/.env
+wget -nv https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-all.zip
+unzip -qq gradle-$GRADLE_VERSION-all.zip -d /usr/local && rm -f gradle-$GRADLE_VERSION-all.zip
+ln -fs /usr/local/gradle-$GRADLE_VERSION/bin/gradle /usr/bin
+echo 'export PATH=$PATH:/usr/local/gradle-$GRADLE_VERSION/bin' >> /etc/drydock/.env
 
-echo "================ Installing apache-maven-3.5.2 ================="
-wget -nv http://redrockdigimark.com/apachemirror/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
-tar xzf apache-maven-3.5.2-bin.tar.gz -C /usr/local && rm -f apache-maven-3.5.2-bin.tar.gz
-ln -fs /usr/local/apache-maven-3.5.2/bin/mvn /usr/bin
-echo 'export PATH=$PATH:/usr/local/apache-maven-3.5.2/bin' >> /etc/drydock/.env
 
-echo "================ Installing apache-ant-1.10.1 ================="
-wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
-tar xzf apache-ant-1.10.1-bin.tar.gz -C /usr/local && rm -f apache-ant-1.10.1-bin.tar.gz
-ln -fs /usr/local/apache-ant-1.10.1/bin/ant /usr/bin
-echo 'export ANT_HOME=/usr/local/apache-ant-1.10.1' >> /etc/drydock/.env
-echo 'export PATH=$PATH:/usr/local/apache-ant-1.10.1/bin' >> /etc/drydock/.env
+APACHE_MAVEN_MAJOR_VERSION=3
+APACHE_MAVEN_VERSION=3.5.3
+echo "Installing apache-maven version: $APACHE_MAVEN_VERSION"
+echo "================ Installing apache-maven-$APACHE_MAVEN_VERSION ================="
+wget -nv http://redrockdigimark.com/apachemirror/maven/maven-$APACHE_MAVEN_MAJOR_VERSION/$APACHE_MAVEN_VERSION/binaries/apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
+tar xzf apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz -C /usr/local && rm -f apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
+ln -fs /usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin/mvn /usr/bin
+echo 'export PATH=$PATH:/usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin' >> /etc/drydock/.env
+
+
+APACHE_ANT_VERSION=1.10.1
+echo "Installing apache-ant version: $APACHE_ANT_VERSION"
+echo "================ Installing apache-ant-$APACHE_ANT_VERSION ================="
+wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
+tar xzf apache-ant-$APACHE_ANT_VERSION-bin.tar.gz -C /usr/local && rm -f apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
+ln -fs /usr/local/apache-ant-$APACHE_ANT_VERSION/bin/ant /usr/bin
+echo 'export ANT_HOME=/usr/local/apache-ant-$APACHE_ANT_VERSION' >> /etc/drydock/.env
+echo 'export PATH=$PATH:/usr/local/apache-ant-$APACHE_ANT_VERSION/bin' >> /etc/drydock/.env
 
 for file in /c7javall/version/*.sh;
 do
