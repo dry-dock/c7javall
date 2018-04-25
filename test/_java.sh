@@ -27,8 +27,8 @@ printf "\n"
 java -version
 printf "\n"
 
-echo "alternatives --set java /usr/java/jre1.8.0_161/bin/java"
-alternatives --set java /usr/java/jre1.8.0_161/bin/java
+echo "alternatives --set java /usr/java/jre1.8.0_171-amd64/bin/java"
+alternatives --set java /usr/java/jre1.8.0_171-amd64/bin/java
 printf "\n"
 java -version
 printf "\n"
