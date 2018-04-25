@@ -21,8 +21,8 @@ printf "\n"
 java -version
 printf "\n"
 
-echo "alternatives --set java /usr/java/jdk-9.0.4/bin/java"
-alternatives --set java /usr/java/jdk-9.0.4/bin/java
+echo "alternatives --set java /usr/java/jdk-10.0.1/bin/java"
+alternatives --set java /usr/java/jdk-10.0.1/bin/java
 printf "\n"
 java -version
 printf "\n"
