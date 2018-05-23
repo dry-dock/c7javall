@@ -27,7 +27,6 @@ ln -fs /usr/local/apache-ant-$APACHE_ANT_VERSION/bin/ant /usr/bin
 echo 'export ANT_HOME=/usr/local/apache-ant-$APACHE_ANT_VERSION' >> /etc/drydock/.env
 echo 'export PATH=$PATH:/usr/local/apache-ant-$APACHE_ANT_VERSION/bin' >> /etc/drydock/.env
 
-cp /c7javall/shippable_jdk /usr/local/bin/shippable_jdk
 
 for file in /c7javall/version/*.sh;
 do
