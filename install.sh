@@ -1,5 +1,5 @@
 
-GRADLE_VERSION=4.7
+GRADLE_VERSION=4.8.1
 echo "Installing gradle version: $GRADLE_VERSION"
 echo "================ Installing gradle ================="
 wget -nv https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-all.zip
@@ -9,7 +9,7 @@ echo 'export PATH=$PATH:/usr/local/gradle-$GRADLE_VERSION/bin' >> /etc/drydock/.
 
 
 APACHE_MAVEN_MAJOR_VERSION=3
-APACHE_MAVEN_VERSION=3.5.3
+APACHE_MAVEN_VERSION=3.5.4
 echo "Installing apache-maven version: $APACHE_MAVEN_VERSION"
 echo "================ Installing apache-maven-$APACHE_MAVEN_VERSION ================="
 wget -nv http://redrockdigimark.com/apachemirror/maven/maven-$APACHE_MAVEN_MAJOR_VERSION/$APACHE_MAVEN_VERSION/binaries/apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
@@ -18,7 +18,7 @@ ln -fs /usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin/mvn /usr/bin
 echo 'export PATH=$PATH:/usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin' >> /etc/drydock/.env
 
 
-APACHE_ANT_VERSION=1.10.3
+APACHE_ANT_VERSION=1.10.4
 echo "Installing apache-ant version: $APACHE_ANT_VERSION"
 echo "================ Installing apache-ant-$APACHE_ANT_VERSION ================="
 wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
