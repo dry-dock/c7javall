@@ -43,8 +43,8 @@ mv tools/ /opt/android-sdk/
 
 ln -fs /opt/android-sdk/tools/bin/sdkmanager /usr/bin
 
-export JAVA_HOME=/usr/java/jdk1.8.0_171-amd64 
-export PATH=$PATH=/usr/java/jre1.8.0_171-amd64/bin
+export JAVA_HOME=/usr/java/jdk1.8.0_181-amd64
+export PATH=$PATH=/usr/java/jre1.8.0_181-amd64/bin
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_SDK=/opt/android-sdk/tools/bin
 
