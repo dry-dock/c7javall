@@ -12,11 +12,6 @@ printf "\n"
 java -version
 printf "\n"
 
-shipctl jdk set openjdk9
-printf "\n"
-java -version
-printf "\n"
-
 shipctl jdk set openjdk10
 printf "\n"
 java -version
