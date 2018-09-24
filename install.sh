@@ -1,5 +1,5 @@
 
-GRADLE_VERSION=4.9
+GRADLE_VERSION=4.10.1
 echo "Installing gradle version: $GRADLE_VERSION"
 echo "================ Installing gradle ================="
 wget -nv https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-all.zip
