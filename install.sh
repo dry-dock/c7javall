@@ -43,8 +43,10 @@ mv tools/ /opt/android-sdk/
 
 ln -fs /opt/android-sdk/tools/bin/sdkmanager /usr/bin
 
-export JAVA_HOME=/usr/java/jdk1.8.0_192-amd64
-export PATH=$PATH=/usr/java/jdk1.8.0_192-amd64/bin
+ln -s /usr/java/jdk1.8.0_192-amd64/ /usr/java/java-8-oraclejdk-amd64
+
+export JAVA_HOME=/usr/java/java-8-oraclejdk-amd64
+export PATH=$PATH=/usr/java/java-8-oraclejdk-amd64/bin
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_SDK=/opt/android-sdk/tools/bin
 
