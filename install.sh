@@ -9,7 +9,7 @@ echo 'export PATH=$PATH:/usr/local/gradle-$GRADLE_VERSION/bin' >> /etc/drydock/.
 
 
 APACHE_MAVEN_MAJOR_VERSION=3
-APACHE_MAVEN_VERSION=3.5.4
+APACHE_MAVEN_VERSION=3.6.0
 echo "Installing apache-maven version: $APACHE_MAVEN_VERSION"
 echo "================ Installing apache-maven-$APACHE_MAVEN_VERSION ================="
 wget -nv http://redrockdigimark.com/apachemirror/maven/maven-$APACHE_MAVEN_MAJOR_VERSION/$APACHE_MAVEN_VERSION/binaries/apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
