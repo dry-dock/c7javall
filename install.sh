@@ -18,7 +18,7 @@ ln -fs /usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin/mvn /usr/bin
 echo 'export PATH=$PATH:/usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin' >> /etc/drydock/.env
 
 
-APACHE_ANT_VERSION=1.10.5
+APACHE_ANT_VERSION=1.9.13
 echo "Installing apache-ant version: $APACHE_ANT_VERSION"
 echo "================ Installing apache-ant-$APACHE_ANT_VERSION ================="
 wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
