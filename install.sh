@@ -12,7 +12,7 @@ APACHE_MAVEN_MAJOR_VERSION=3
 APACHE_MAVEN_VERSION=3.6.0
 echo "Installing apache-maven version: $APACHE_MAVEN_VERSION"
 echo "================ Installing apache-maven-$APACHE_MAVEN_VERSION ================="
-wget -nv http://redrockdigimark.com/apachemirror/maven/maven-$APACHE_MAVEN_MAJOR_VERSION/$APACHE_MAVEN_VERSION/binaries/apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
+wget -nv http://www-eu.apache.org/dist/maven/maven-$APACHE_MAVEN_MAJOR_VERSION/$APACHE_MAVEN_VERSION/binaries/apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
 tar xzf apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz -C /usr/local && rm -f apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
 ln -fs /usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin/mvn /usr/bin
 echo 'export PATH=$PATH:/usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin' >> /etc/drydock/.env
