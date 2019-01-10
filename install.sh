@@ -11,7 +11,6 @@ sdk install maven 3.6.0
 sdk install ant 1.9.9
 yes | sdk install ant 1.10.1
 
-
 for file in /c7javall/version/*.sh;
 do
   $file
