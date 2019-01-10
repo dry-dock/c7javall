@@ -1,32 +1,15 @@
 
-GRADLE_VERSION=5.1
-echo "Installing gradle version: $GRADLE_VERSION"
-echo "================ Installing gradle ================="
-wget -nv https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-all.zip
-unzip -qq gradle-$GRADLE_VERSION-all.zip -d /usr/local && rm -f gradle-$GRADLE_VERSION-all.zip
-ln -fs /usr/local/gradle-$GRADLE_VERSION/bin/gradle /usr/bin
-echo 'export PATH=$PATH:/usr/local/gradle-$GRADLE_VERSION/bin' >> /etc/drydock/.env
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+echo "source $HOME/.sdkman/bin/sdkman-init.sh" >> /etc/drydock/.env
 
+sdk install gradle 4.10.3
+yes | sdk install gradle 5.1
 
-APACHE_MAVEN_MAJOR_VERSION=3
-APACHE_MAVEN_VERSION=3.6.0
-echo "Installing apache-maven version: $APACHE_MAVEN_VERSION"
-echo "================ Installing apache-maven-$APACHE_MAVEN_VERSION ================="
-wget -nv http://www-eu.apache.org/dist/maven/maven-$APACHE_MAVEN_MAJOR_VERSION/$APACHE_MAVEN_VERSION/binaries/apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
-tar xzf apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz -C /usr/local && rm -f apache-maven-$APACHE_MAVEN_VERSION-bin.tar.gz
-ln -fs /usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin/mvn /usr/bin
-echo 'export PATH=$PATH:/usr/local/apache-maven-$APACHE_MAVEN_VERSION/bin' >> /etc/drydock/.env
+sdk install maven 3.6.0
 
-
-APACHE_ANT_VERSION=1.9.13
-echo "Installing apache-ant version: $APACHE_ANT_VERSION"
-echo "================ Installing apache-ant-$APACHE_ANT_VERSION ================="
-wget -nv https://archive.apache.org/dist/ant/binaries/apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
-tar xzf apache-ant-$APACHE_ANT_VERSION-bin.tar.gz -C /usr/local && rm -f apache-ant-$APACHE_ANT_VERSION-bin.tar.gz
-ln -fs /usr/local/apache-ant-$APACHE_ANT_VERSION/bin/ant /usr/bin
-echo 'export ANT_HOME=/usr/local/apache-ant-$APACHE_ANT_VERSION' >> /etc/drydock/.env
-echo 'export PATH=$PATH:/usr/local/apache-ant-$APACHE_ANT_VERSION/bin' >> /etc/drydock/.env
-
+sdk install ant 1.9.9
+yes | sdk install ant 1.10.1
 
 for file in /c7javall/version/*.sh;
 do
